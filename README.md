@@ -7,3 +7,4 @@ We currently use one generic policy to insert security headers in the pages for 
 ## TODO:
 
 - [ ] Add rules to enable logging to Report URI tool
+
