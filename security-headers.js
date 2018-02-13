@@ -78,6 +78,7 @@ const secHeaders = {
         "connect-src 'self'",
           "https://knab.blueconic.net",
           "https://www.googletagmanager.com",
+          "https://www.google-analytics.com",
           "https://middleware.test.knabverzekeren.nl",
           "https://middleware.verzekeren.knab.nl",
           "https://middleware.uat.knabverzekeren.nl",
