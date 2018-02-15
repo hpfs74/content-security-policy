@@ -21,6 +21,7 @@ const secHeaders = {
           "https://knab-dev.apigee.net",
           "https://knab-acc.apigee.net",
           "https://knab-prd.apigee.net",
+          "https://dev.visualwebsiteoptimizer.com",
           ";",
         "img-src  'self'",
           "data:",
@@ -86,7 +87,8 @@ const secHeaders = {
           "https://knab-acc.apigee.net",
           "https://knab-prd.apigee.net",
           "https://d3cuj82m9z5zxb.cloudfront.net",
-          "https://www.google.com/ads/user-lists/837300153;"
+          "https://www.google.com/ads/user-lists/837300153;",
+          "https://dev.visualwebsiteoptimizer.com"
     ],
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
