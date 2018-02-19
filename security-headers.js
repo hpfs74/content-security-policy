@@ -133,7 +133,8 @@ const contentSecurityPolicy = {
         "https://knab-prd.apigee.net",
         "https://d3cuj82m9z5zxb.cloudfront.net",
         "https://www.google.com/ads/user-lists/837300153",
-        "https://dev.visualwebsiteoptimizer.com"
+        "https://dev.visualwebsiteoptimizer.com",
+        "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com"
     ],
     "object-src": ["'none'"]
 }
