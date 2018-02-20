@@ -56,7 +56,8 @@ const contentSecurityPolicy = {
         "https://middleware.uat.knabverzekeren.nl",
         "https://knab-dev.apigee.net",
         "https://knab-acc.apigee.net",
-        "https://knab-prd.apigee.net"
+        "https://knab-prd.apigee.net",
+        "https://api.test.knabverzekeren.nl"
     ],
     "img-src": [
         "'self'",
@@ -131,6 +132,7 @@ const contentSecurityPolicy = {
         "https://knab-dev.apigee.net",
         "https://knab-acc.apigee.net",
         "https://knab-prd.apigee.net",
+        "https://api.test.knabverzekeren.nl",
         "https://d3cuj82m9z5zxb.cloudfront.net",
         "https://www.google.com/ads/user-lists/837300153",
         "https://dev.visualwebsiteoptimizer.com",
