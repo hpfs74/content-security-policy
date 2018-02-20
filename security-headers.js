@@ -44,7 +44,7 @@ function buildContentSecurityPolicy(csp) {
 
 
 const contentSecurityPolicy = {
-    "report-uri": "",
+    "report-uri": "https://report-uri.knab.nl/r/default/csp/enforce",
     "default-src": [
         "'unsafe-inline'",
         "'self'",
