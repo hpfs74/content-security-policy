@@ -124,6 +124,7 @@ const contentSecurityPolicy = {
     "connect-src": [
         "'self'",
         "https://knab.blueconic.net",
+        "https://cdn-static.formisimo.com/",
         "https://www.googletagmanager.com",
         "https://www.google-analytics.com",
         "https://middleware.test.knabverzekeren.nl",
@@ -135,7 +136,7 @@ const contentSecurityPolicy = {
         "https://api.test.knabverzekeren.nl",
         "https://d3cuj82m9z5zxb.cloudfront.net",
         "https://www.google.com/ads/user-lists/837300153",
-        "https://dev.visualwebsiteoptimizer.com",
+        "https://dev.visualwebsiteoptimizer.com/",
         "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com"
     ],
     "object-src": ["'none'"]
