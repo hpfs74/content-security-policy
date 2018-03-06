@@ -119,6 +119,7 @@ const contentSecurityPolicy = {
         "https://quadia.webtvframework.com",
         "https://bid.g.doubleclick.net",
         "https://8163947.fls.doubleclick.net",
+        "https://connect.facebook.net",
         "https://staticxx.facebook.com/ https://mods.netb.nl"
     ],
     "connect-src": [
