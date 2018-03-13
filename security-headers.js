@@ -36,12 +36,13 @@ function buildTag(tag, val) {
  * @returns {string}
  */
 function buildContentSecurityPolicy(csp) {
-    if (typeof(csp) === 'object') {
-        return Object.keys(csp).reduce( (acc, el) => `${buildTag(el, csp[el])}`);
+
+    if (typeof(csp) === "object") {
+
+        return Object.keys(csp).reduce( (acc, el) => `${acc} ${buildTag(el, csp[el])}`, "");
     }
     return "";
 }
-
 
 const contentSecurityPolicy = {
     "report-uri": "https://report-uri.knab.nl/r/t/csp/enforce",
