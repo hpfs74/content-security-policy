@@ -89,7 +89,7 @@ describe("LAMBDA@EDGE", () => {
 
         it("should contain proper default-src", () => {
             expect(cspString)
-                .to.contains("default-src 'unsafe-inline' 'self' https://www.google-analytics.com https://www.googletagmanager.com http://aegon-middleware-qa.mobgen.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl");
+                .to.contains("default-src 'unsafe-inline' 'self' https://www.google-analytics.com https://www.googletagmanager.com http://aegon-middleware-qa.mobgen.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://cdn-static.formisimo.com https://tracking.formisimo.com");
         });
 
         it("should contain proper img-src", () => {
@@ -114,7 +114,7 @@ describe("LAMBDA@EDGE", () => {
 
         it("should contain proper connect-src", () => {
             expect(cspString)
-                .to.contains("connect-src 'self' https://knab.blueconic.net https://cdn-static.formisimo.com/ https://www.googletagmanager.com https://www.google-analytics.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://d3cuj82m9z5zxb.cloudfront.net https://www.google.com/ads/user-lists/837300153 https://dev.visualwebsiteoptimizer.com/ https://j58eycphw6.execute-api.eu-west-1.amazonaws.com");
+                .to.contains("connect-src 'self' https://knab.blueconic.net https://www.googletagmanager.com https://www.google-analytics.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://d3cuj82m9z5zxb.cloudfront.net https://www.google.com/ads/user-lists/837300153 https://dev.visualwebsiteoptimizer.com/ https://j58eycphw6.execute-api.eu-west-1.amazonaws.com");
         });
 
         it("should contain proper object-src", () => {

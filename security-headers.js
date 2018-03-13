@@ -58,7 +58,9 @@ const contentSecurityPolicy = {
         "https://knab-dev.apigee.net",
         "https://knab-acc.apigee.net",
         "https://knab-prd.apigee.net",
-        "https://api.test.knabverzekeren.nl"
+        "https://api.test.knabverzekeren.nl",
+        "https://cdn-static.formisimo.com",
+        "https://tracking.formisimo.com"
     ],
     "img-src": [
         "'self'",
@@ -126,7 +128,7 @@ const contentSecurityPolicy = {
     "connect-src": [
         "'self'",
         "https://knab.blueconic.net",
-        "https://cdn-static.formisimo.com/",
+
         "https://www.googletagmanager.com",
         "https://www.google-analytics.com",
         "https://middleware.test.knabverzekeren.nl",
