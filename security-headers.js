@@ -60,7 +60,8 @@ const contentSecurityPolicy = {
         "https://knab-prd.apigee.net",
         "https://api.test.knabverzekeren.nl",
         "https://cdn-static.formisimo.com",
-        "https://tracking.formisimo.com"
+        "https://tracking.formisimo.com",
+        "https://code.jquery.com"
     ],
     "img-src": [
         "'self'",
