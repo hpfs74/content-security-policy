@@ -49,6 +49,7 @@ const contentSecurityPolicy = {
     "default-src": [
         "'unsafe-inline'",
         "'self'",
+        "https://report-uri.knab.nl/r/t/csp/enforce",
         "https://www.google-analytics.com",
         "https://www.googletagmanager.com",
         "http://aegon-middleware-qa.mobgen.com",
@@ -89,7 +90,10 @@ const contentSecurityPolicy = {
         "http://placehold.it",
         "https://www.google.com/ads",
         "https://www.gstatic.com",
-        "https://d3cuj82m9z5zxb.cloudfront.net"
+        "https://d3cuj82m9z5zxb.cloudfront.net",
+        "http://*.visualwebsiteoptimizer.com",
+        "https://*.cloudfront.net",
+        "http://w.usabilla.com"
     ],
     "script-src": [
         "'unsafe-inline'",
@@ -109,7 +113,11 @@ const contentSecurityPolicy = {
         "https://www.googleadservices.com",
         "https://knab.blueconic.net",
         "https://apis.google.com",
-        "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/837300153"
+        "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/837300153",
+        "https://cdn-static.formisimo.com",
+        "http://w.usabilla.com",
+        "http://code.jquery.com",
+        "http://tracking.formisimo.com"
     ],
     "style-src": [
         "'unsafe-inline'",
@@ -129,7 +137,7 @@ const contentSecurityPolicy = {
     "connect-src": [
         "'self'",
         "https://knab.blueconic.net",
-
+        "https://cdn-static.formisimo.com/",
         "https://www.googletagmanager.com",
         "https://www.google-analytics.com",
         "https://middleware.test.knabverzekeren.nl",
@@ -141,8 +149,11 @@ const contentSecurityPolicy = {
         "https://api.test.knabverzekeren.nl",
         "https://d3cuj82m9z5zxb.cloudfront.net",
         "https://www.google.com/ads/user-lists/837300153",
-        "https://dev.visualwebsiteoptimizer.com/",
-        "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com"
+        "https://*.visualwebsiteoptimizer.com/",
+        "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com",
+        "http://w.usabilla.com",
+        "http://code.jquery.com",
+        "http://tracking.formisimo.com"
     ],
     "object-src": ["'none'"]
 }
