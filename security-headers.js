@@ -93,7 +93,9 @@ const contentSecurityPolicy = {
         "https://d3cuj82m9z5zxb.cloudfront.net",
         "http://*.visualwebsiteoptimizer.com",
         "https://*.cloudfront.net",
-        "http://w.usabilla.com"
+        "https://*.usabilla.com",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "http://*.usabilla.com"
     ],
     "script-src": [
         "'unsafe-inline'",
@@ -113,9 +115,11 @@ const contentSecurityPolicy = {
         "https://www.googleadservices.com",
         "https://knab.blueconic.net",
         "https://apis.google.com",
-        "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/837300153",
+        "https://googleads.g.doubleclick.net",
         "https://cdn-static.formisimo.com",
-        "http://w.usabilla.com",
+        "https://*.usabilla.com",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "http://*.usabilla.com",
         "http://code.jquery.com",
         "http://tracking.formisimo.com"
     ],
@@ -151,7 +155,9 @@ const contentSecurityPolicy = {
         "https://www.google.com/ads/user-lists/837300153",
         "https://*.visualwebsiteoptimizer.com/",
         "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com",
-        "http://w.usabilla.com",
+        "https://*.usabilla.com",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "http://*.usabilla.com",
         "http://code.jquery.com",
         "http://tracking.formisimo.com"
     ],
