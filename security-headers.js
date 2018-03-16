@@ -165,6 +165,7 @@ const contentSecurityPolicy = {
 }
 
 const secHeaders = {
+    "csp-version": "v1",
     "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
     "Content-Security-Policy": buildContentSecurityPolicy(contentSecurityPolicy),
     "X-Content-Type-Options": "nosniff",
