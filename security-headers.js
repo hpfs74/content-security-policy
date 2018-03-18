@@ -95,7 +95,9 @@ const contentSecurityPolicy = {
         "https://*.cloudfront.net",
         "https://*.usabilla.com",
         "https://script-rumlive.rum.nccgroup-webperf.com",
-        "http://*.usabilla.com"
+        "https://knab-dev.apigee.net",
+        "https://knab-acc.apigee.net",
+        "https://knab-prd.apigee.net"
     ],
     "script-src": [
         "'unsafe-inline'",
@@ -119,7 +121,6 @@ const contentSecurityPolicy = {
         "https://cdn-static.formisimo.com",
         "https://*.usabilla.com",
         "https://script-rumlive.rum.nccgroup-webperf.com",
-        "http://*.usabilla.com",
         "http://code.jquery.com",
         "http://tracking.formisimo.com"
     ],
@@ -157,7 +158,6 @@ const contentSecurityPolicy = {
         "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com",
         "https://*.usabilla.com",
         "https://script-rumlive.rum.nccgroup-webperf.com",
-        "http://*.usabilla.com",
         "http://code.jquery.com",
         "http://tracking.formisimo.com"
     ],

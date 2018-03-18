@@ -89,17 +89,18 @@ describe("LAMBDA@EDGE", () => {
 
         it("should contain proper default-src", () => {
             expect(cspString)
-                .to.contains("default-src 'unsafe-inline' 'self' https://www.google-analytics.com https://www.googletagmanager.com http://aegon-middleware-qa.mobgen.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://cdn-static.formisimo.com https://tracking.formisimo.com https://code.jquery.com;");
+                .to.contains("default-src 'unsafe-inline' 'self' https://report-uri.knab.nl/r/t/csp/enforce https://www.google-analytics.com https://www.googletagmanager.com http://aegon-middleware-qa.mobgen.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://cdn-static.formisimo.com https://tracking.formisimo.com https://code.jquery.com;");
         });
 
         it("should contain proper img-src", () => {
             expect(cspString)
-                .to.contains("img-src 'self' data: https://ssl.google-analytics.com https://www.google.com https://www.google.nl https://www.google-analytics.com https://*.visualwebsiteoptimizer.com https://www.facebook.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://secure.adnxs.com https://ib.adnxs.com https://www.facebook.com/tr/ https://secure.adnxs.com https://www.at19.net https://knab.blueconic.net https://stats.g.doubleclick.net https://ad.doubleclick.net/ddm/activity/src=8163947 https://secure.adnxs.com https://www.google.nl https://www.google-analytics.com https://stats.g.doubleclick.net http://placehold.it https://www.google.com/ads https://www.gstatic.com https://d3cuj82m9z5zxb.cloudfront.net;");
+                .to.contains("img-src 'self' data: https://ssl.google-analytics.com https://www.google.com https://www.google.nl https://www.google-analytics.com https://*.visualwebsiteoptimizer.com https://www.facebook.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://secure.adnxs.com https://ib.adnxs.com https://www.facebook.com/tr/ https://secure.adnxs.com https://www.at19.net https://knab.blueconic.net https://stats.g.doubleclick.net https://ad.doubleclick.net/ddm/activity/src=8163947 https://secure.adnxs.com https://www.google.nl https://www.google-analytics.com https://stats.g.doubleclick.net http://placehold.it https://www.google.com/ads https://www.gstatic.com https://d3cuj82m9z5zxb.cloudfront.net http://*.visualwebsiteoptimizer.com https://*.cloudfront.net https://*.usabilla.com https://script-rumlive.rum.nccgroup-webperf.com https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net;");
         });
 
         it("should contain proper script-src", () => {
             expect(cspString)
-                .to.contains("script-src 'unsafe-inline' 'self' 'unsafe-eval' http://www.googleadservices.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com https://ajax.googleapis.com https://cdnjs.cloudflare.com https://www.google-analytics.com https://*.visualwebsiteoptimizer.com https://connect.facebook.net https://www.googletagmanager.com https://ssl.google-analytics.com https://www.googleadservices.com https://knab.blueconic.net https://apis.google.com https://googleads.g.doubleclick.net/pagead/viewthroughconversion/837300153;");
+                .to.contains("script-src 'unsafe-inline' 'self' 'unsafe-eval' http://www.googleadservices.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com https://ajax.googleapis.com https://cdnjs.cloudflare.com https://www.google-analytics.com https://*.visualwebsiteoptimizer.com https://connect.facebook.net https://www.googletagmanager.com https://ssl.google-analytics.com https://www.googleadservices.com https://knab.blueconic.net https://apis.google.com https://googleads.g.doubleclick.net https://cdn-static.formisimo.com https://*.usabilla.com https://script-rumlive.rum.nccgroup-webperf.com http://code.jquery.com http://tracking.formisimo.com;");
+
         });
 
         it("should contain proper style-src", () => {
@@ -114,7 +115,8 @@ describe("LAMBDA@EDGE", () => {
 
         it("should contain proper connect-src", () => {
             expect(cspString)
-                .to.contains("connect-src 'self' https://knab.blueconic.net https://www.googletagmanager.com https://www.google-analytics.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://d3cuj82m9z5zxb.cloudfront.net https://www.google.com/ads/user-lists/837300153 https://dev.visualwebsiteoptimizer.com/ https://j58eycphw6.execute-api.eu-west-1.amazonaws.com;");
+                .to.contains("connect-src 'self' https://knab.blueconic.net https://cdn-static.formisimo.com/ https://www.googletagmanager.com https://www.google-analytics.com https://middleware.test.knabverzekeren.nl https://middleware.verzekeren.knab.nl https://middleware.uat.knabverzekeren.nl https://knab-dev.apigee.net https://knab-acc.apigee.net https://knab-prd.apigee.net https://api.test.knabverzekeren.nl https://d3cuj82m9z5zxb.cloudfront.net https://www.google.com/ads/user-lists/837300153 https://*.visualwebsiteoptimizer.com/ https://j58eycphw6.execute-api.eu-west-1.amazonaws.com https://*.usabilla.com https://script-rumlive.rum.nccgroup-webperf.com http://code.jquery.com http://tracking.formisimo.com;");
+
         });
 
         it("should contain proper object-src", () => {
