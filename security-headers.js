@@ -27,102 +27,102 @@ function buildTag(tag, val) {
     }
 
     return ret;
-}
+  }
 
-/**
- * iterate through csp configuration object
- *
- * @param csp
- * @returns {string}
- */
-function buildContentSecurityPolicy(csp) {
+  /**
+  * iterate through csp configuration object
+  *
+  * @param csp
+  * @returns {string}
+  */
+  function buildContentSecurityPolicy(csp) {
 
     if (typeof(csp) === "object") {
 
         return Object.keys(csp).reduce( (acc, el) => `${acc} ${buildTag(el, csp[el])}`, "");
     }
     return "";
-}
+  }
 
-const contentSecurityPolicy = {
+  const contentSecurityPolicy = {
     "report-uri": "https://report-uri.knab.nl/r/t/csp/enforce",
     "default-src": [
         "'unsafe-inline'",
         "'self'",
-        "https://report-uri.knab.nl/r/t/csp/enforce",
-        "https://www.google-analytics.com",
-        "https://www.googletagmanager.com",
+        "http://*.usabilla.com",
         "http://aegon-middleware-qa.mobgen.com",
-        "https://middleware.test.knabverzekeren.nl",
-        "https://middleware.verzekeren.knab.nl",
-        "https://middleware.uat.knabverzekeren.nl",
-        "https://knab-dev.apigee.net",
-        "https://knab-acc.apigee.net",
-        "https://knab-prd.apigee.net",
+        "https://*.usabilla.com",
         "https://api.test.knabverzekeren.nl",
         "https://cdn-static.formisimo.com",
+        "https://code.jquery.com",
+        "https://googleads.g.doubleclick.net",
+        "https://knab-acc.apigee.net",
+        "https://knab-dev.apigee.net",
+        "https://knab-prd.apigee.net",
+        "https://middleware.test.knabverzekeren.nl",
+        "https://middleware.uat.knabverzekeren.nl",
+        "https://middleware.verzekeren.knab.nl",
+        "https://report-uri.knab.nl/r/t/csp/enforce",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
         "https://tracking.formisimo.com",
-        "https://code.jquery.com"
+        "https://www.google-analytics.com",
+        "https://www.googletagmanager.com"
     ],
     "img-src": [
         "'self'",
         "data:",
-        "https://ssl.google-analytics.com",
-        "https://www.google.com",
-        "https://www.google.nl",
-        "https://www.google-analytics.com",
-        "https://*.visualwebsiteoptimizer.com",
-        "https://www.facebook.com",
-        "https://googleads.g.doubleclick.net",
-        "https://www.googleadservices.com",
-        "https://secure.adnxs.com",
-        "https://ib.adnxs.com",
-        "https://www.facebook.com/tr/",
-        "https://secure.adnxs.com",
-        "https://www.at19.net",
-        "https://knab.blueconic.net",
-        "https://stats.g.doubleclick.net",
-        "https://ad.doubleclick.net/ddm/activity/src=8163947",
-        "https://secure.adnxs.com",
-        "https://www.google.nl",
-        "https://www.google-analytics.com",
-        "https://stats.g.doubleclick.net",
-        "http://placehold.it",
-        "https://www.google.com/ads",
-        "https://www.gstatic.com",
-        "https://d3cuj82m9z5zxb.cloudfront.net",
         "http://*.visualwebsiteoptimizer.com",
+        "http://placehold.it",
         "https://*.cloudfront.net",
+        "http://*.usabilla.com",
         "https://*.usabilla.com",
-        "https://script-rumlive.rum.nccgroup-webperf.com",
-        "https://knab-dev.apigee.net",
+        "https://*.visualwebsiteoptimizer.com",
+        "https://ad.doubleclick.net/ddm/activity/src=8163947",
+        "https://d3cuj82m9z5zxb.cloudfront.net",
+        "https://googleads.g.doubleclick.net",
+        "https://ib.adnxs.com",
         "https://knab-acc.apigee.net",
-        "https://knab-prd.apigee.net"
+        "https://knab-dev.apigee.net",
+        "https://knab-prd.apigee.net",
+        "https://knab.blueconic.net",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "https://secure.adnxs.com",
+        "https://ssl.google-analytics.com",
+        "https://stats.g.doubleclick.net",
+        "https://www.at19.net",
+        "https://www.facebook.com",
+        "https://www.facebook.com/tr/",
+        "https://www.google-analytics.com",
+        "https://www.google.com",
+        "https://www.google.com/ads",
+        "https://www.google.nl",
+        "https://www.googleadservices.com",
+        "https://www.gstatic.com"
     ],
     "script-src": [
         "'unsafe-inline'",
         "'self'",
         "'unsafe-eval'",
-        "http://www.googleadservices.com",
-        "https://www.google-analytics.com",
-        "https://www.gstatic.com",
-        "https://www.google.com",
-        "https://ajax.googleapis.com",
-        "https://cdnjs.cloudflare.com",
-        "https://www.google-analytics.com",
-        "https://*.visualwebsiteoptimizer.com",
-        "https://connect.facebook.net",
-        "https://www.googletagmanager.com",
-        "https://ssl.google-analytics.com",
-        "https://www.googleadservices.com",
-        "https://knab.blueconic.net",
-        "https://apis.google.com",
-        "https://googleads.g.doubleclick.net",
-        "https://cdn-static.formisimo.com",
-        "https://*.usabilla.com",
-        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "http://*.usabilla.com",
         "http://code.jquery.com",
-        "http://tracking.formisimo.com"
+        "http://tracking.formisimo.com",
+        "http://www.googleadservices.com",
+        "https://*.usabilla.com",
+        "https://*.visualwebsiteoptimizer.com",
+        "https://ajax.googleapis.com",
+        "https://apis.google.com",
+        "https://cdn-static.formisimo.com",
+        "https://cdnjs.cloudflare.com",
+        "https://connect.facebook.net",
+        "https://googleads.g.doubleclick.net",
+        "https://knab.blueconic.net",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "https://ssl.google-analytics.com",
+        "https://www.google-analytics.com",
+        "https://www.google.com",
+        "https://www.googleadservices.com",
+        "https://www.googletagmanager.com",
+        "https://www.gstatic.com"
     ],
     "style-src": [
         "'unsafe-inline'",
@@ -137,32 +137,35 @@ const contentSecurityPolicy = {
         "https://bid.g.doubleclick.net",
         "https://8163947.fls.doubleclick.net",
         "https://connect.facebook.net",
-        "https://staticxx.facebook.com/ https://mods.netb.nl"
+        "https://staticxx.facebook.com/",
+        "https://mods.netb.nl"
     ],
     "connect-src": [
         "'self'",
-        "https://knab.blueconic.net",
-        "https://cdn-static.formisimo.com/",
-        "https://www.googletagmanager.com",
-        "https://www.google-analytics.com",
-        "https://middleware.test.knabverzekeren.nl",
-        "https://middleware.verzekeren.knab.nl",
-        "https://middleware.uat.knabverzekeren.nl",
-        "https://knab-dev.apigee.net",
-        "https://knab-acc.apigee.net",
-        "https://knab-prd.apigee.net",
-        "https://api.test.knabverzekeren.nl",
-        "https://d3cuj82m9z5zxb.cloudfront.net",
-        "https://www.google.com/ads/user-lists/837300153",
-        "https://*.visualwebsiteoptimizer.com/",
-        "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com",
-        "https://*.usabilla.com",
-        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "http://*.usabilla.com",
         "http://code.jquery.com",
-        "http://tracking.formisimo.com"
+        "http://tracking.formisimo.com",
+        "https://*.usabilla.com",
+        "https://*.visualwebsiteoptimizer.com/",
+        "https://api.test.knabverzekeren.nl",
+        "https://cdn-static.formisimo.com/",
+        "https://d3cuj82m9z5zxb.cloudfront.net",
+        "https://googleads.g.doubleclick.net",
+        "https://j58eycphw6.execute-api.eu-west-1.amazonaws.com",
+        "https://knab-acc.apigee.net",
+        "https://knab-dev.apigee.net",
+        "https://knab-prd.apigee.net",
+        "https://knab.blueconic.net",
+        "https://middleware.test.knabverzekeren.nl",
+        "https://middleware.uat.knabverzekeren.nl",
+        "https://middleware.verzekeren.knab.nl",
+        "https://script-rumlive.rum.nccgroup-webperf.com",
+        "https://www.google-analytics.com",
+        "https://www.google.com/ads/user-lists/837300153",
+        "https://www.googletagmanager.com"
     ],
     "object-src": ["'none'"]
-}
+  }
 
 const secHeaders = {
     "csp-version": "v1",
@@ -173,9 +176,9 @@ const secHeaders = {
     "X-XSS-Protection": "1; mode=block",
     "Referrer-Policy": "same-origin",
     "X-UA-Compatible": "IE=edge"
-};
+  };
 
-exports.handler = (event, context, callback) => {
+  exports.handler = (event, context, callback) => {
     const response = event.Records[0].cf.response;
     const headers = response.headers;
 
@@ -184,4 +187,4 @@ exports.handler = (event, context, callback) => {
     });
 
     return callback(null, response);
-}
+  }
