@@ -126,7 +126,11 @@ function buildTag(tag, val) {
     ],
     "style-src": [
         "'unsafe-inline'",
-        "'self'"
+        "'self'",
+        "https://d6tizftlrpuof.cloudfront.net"
+    ],
+    "font-src": [
+        "https://d6tizftlrpuof.cloudfront.net"
     ],
     "frame-src": [
         "'self'",
