@@ -130,6 +130,7 @@ function buildTag(tag, val) {
         "https://d6tizftlrpuof.cloudfront.net"
     ],
     "font-src": [
+        "'self'",
         "https://d6tizftlrpuof.cloudfront.net"
     ],
     "frame-src": [
