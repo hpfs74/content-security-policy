@@ -142,7 +142,8 @@ function buildTag(tag, val) {
         "https://8163947.fls.doubleclick.net",
         "https://connect.facebook.net",
         "https://staticxx.facebook.com/",
-        "https://mods.netb.nl"
+        "https://mods.netb.nl",
+        "https://email.knab.nl"
     ],
     "connect-src": [
         "'self'",
