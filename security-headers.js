@@ -122,7 +122,8 @@ function buildTag(tag, val) {
         "https://www.google.com",
         "https://www.googleadservices.com",
         "https://www.googletagmanager.com",
-        "https://www.gstatic.com"
+        "https://www.gstatic.com",
+        "https://cdn.polyfill.io"
     ],
     "style-src": [
         "'unsafe-inline'",
@@ -168,7 +169,8 @@ function buildTag(tag, val) {
         "https://script-rumlive.rum.nccgroup-webperf.com",
         "https://www.google-analytics.com",
         "https://www.google.com/ads/user-lists/837300153",
-        "https://www.googletagmanager.com"
+        "https://www.googletagmanager.com",
+        "https://api.uat.knabverzekeren.nl"
     ],
     "object-src": ["'none'"]
   }
