@@ -97,7 +97,8 @@ function buildTag(tag, val) {
         "https://www.google.com/ads",
         "https://www.google.nl",
         "https://www.googleadservices.com",
-        "https://www.gstatic.com"
+        "https://www.gstatic.com",
+        "https://webmodule2.risk-verzekeringen.nl"
     ],
     "script-src": [
         "'unsafe-inline'",
@@ -123,7 +124,8 @@ function buildTag(tag, val) {
         "https://www.googleadservices.com",
         "https://www.googletagmanager.com",
         "https://www.gstatic.com",
-        "https://cdn.polyfill.io"
+        "https://cdn.polyfill.io",
+        "https://tagmanager.google.com"
     ],
     "style-src": [
         "'unsafe-inline'",
@@ -170,7 +172,8 @@ function buildTag(tag, val) {
         "https://www.google-analytics.com",
         "https://www.google.com/ads/user-lists/837300153",
         "https://www.googletagmanager.com",
-        "https://api.uat.knabverzekeren.nl"
+        "https://api.uat.knabverzekeren.nl",
+        "https://api.knab.nl/"
     ],
     "object-src": ["'none'"]
   }

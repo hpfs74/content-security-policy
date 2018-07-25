@@ -1,0 +1,35 @@
+---
+  - name: Comparison API
+    hosts: localhost
+    roles:
+      - {
+          role: deploy,
+          deployment_stack: "lambda",
+          lambda_env_vars_keys        : [ "dummy" ],
+          lambda_env_vars_vals        : [ "dummy" ]
+        }
+    vars:
+      stack_name                 : "ins_csp"
+      iam_role                   : "{{ common.iam_role }}"
+      region                     : "{{ common.region }}"
+      mfa_serial                 : "{{ common.mfa_serial }}"
+      state_bucketname           : "{{ common.state_bucketname }}"
+      terraform_dir              : "{{ common.terraform_dir }}"
+      public_route53_zoneid      : "{{ common.public_route53_zoneid }}"
+      costcenter                 : "{{ common.costcenter }}"
+      owner                      : "{{ common.owner }}"
+      aws_account_id             : "{{ common.aws_account_id }}"
+
+      # Lambda properties
+      lambda_edge                 : true
+      lambda_function_name        : "insurance-csp"
+      lambda_handler              : "security-headers.handler"
+      lambda_s3_bucket            : "{{ common.lambda_edge_artifact_bucketname }}"
+      lambda_zip_path             : "insurances/ContentSecurityPolicy/artifacts/insurance.ContentSecurityPolicy-{{ software_version }}.zip"
+      lambda_zip_version          : "{{ software_version }}"
+      lambda_runtime              : "nodejs8.10"
+      lambda_memory_size          : 128
+      lambda_description          : "Insurances Content Security Policy"
+      lambda_timeout_seconds      : 30
+      lambda_unique_name          : "{{ env_name }}_{{ stack_name }}_{{ lambda_function_name }}"
+      lambda_tracing_config       : "Active"

@@ -1,0 +1,65 @@
+pipeline
+{
+    agent { label "${env.BUILD_SLAVE}" }
+    environment
+    {
+        SERVICE_NAME = 'insurance.ContentSecurityPolicy'
+        RELEASE_FOLDER = 'insurances/ContentSecurityPolicy/releases'
+        ARTIFACT_FOLDER = 'insurances/ContentSecurityPolicy/artifacts'
+        ARTIFACT_BUCKET = 'knab-artifact-bucket-mgmt'
+        AWS_S3_CREDENTIALS = 'jenkins-artifact-s3'
+        AWS_S3_REGION = 'eu-west-1'
+    }
+
+    stages
+    {
+        stage("Checkout source") {
+            steps
+            {
+                dir('code')
+                {
+                    git branch: 'master', credentialsId: 'bitbucket-jenkins', url: "git@bitbucket.org:knabab/content-security-policy.git"
+                }
+                dir('scripts')
+                {
+                    git branch: 'master', credentialsId: 'bitbucket-jenkins', url: "git@bitbucket.org:knabab/knab-jenkins-scripts.git"
+                }
+            }
+        }
+
+
+        stage('Archive') {
+            steps {
+                dir('code')
+                {
+                    sh 'mkdir ../artifact'
+                    zip dir: '.', glob: '*.js', zipFile: "../artifact/lambda.zip"
+                }
+            }
+        }
+
+
+        stage('Archive artifacts') {
+            steps
+            {
+                dir ("artifact")
+                {
+                    s3Upload(file:"lambda.zip", bucket:"${env.ARTIFACT_BUCKET}", path:"${env.ARTIFACT_FOLDER}/${env.SERVICE_NAME}-${env.BUILD_NUMBER}.zip")
+                }
+            }
+        }
+        stage('Run versioning') {
+            steps
+            {
+                dir ('scripts')
+                {
+                    sh 'chmod u+x ./jenkins/update_software_release_file.sh'
+                    withAWS(credentials: "${AWS_S3_CREDENTIALS}", region: "${AWS_S3_REGION}")
+                    {
+                        sh "BUILD_NUMBER=\"${env.BUILD_NUMBER}\" RELEASE_FOLDER=\"${env.RELEASE_FOLDER}\" ./jenkins/update_software_release_file.sh"
+                    }
+                }
+            }
+        }
+    }
+}

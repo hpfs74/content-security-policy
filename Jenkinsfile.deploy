@@ -1,0 +1,107 @@
+pipeline {
+  agent { label "${env.BUILD_SLAVE}" }
+  environment {
+    // Application-specific arguments
+    STACK = 'ins_csp'
+    SERVICE_NAME = 'insurance.ContentSecurityPolicy'
+    RELEASE_FOLDER = 'insurances/ContentSecurityPolicy/releases'
+    ARTIFACT_FOLDER = 'insurances/ContentSecurityPolicy/artifacts'
+    ENV_ARTIFACT_BUCKET = "${ENV_NAME}-artifact-storage-knab-artifact-bucket-${BUCKET_POSTFIX}"
+    EDGE_ARTIFACT_BUCKET = "${ENV_NAME}-lambda-artifact-storage-us-east-1"
+    // Generic parameters
+    EXECUTOR = 'jenkins'
+    ACTION_ARG = '-auto-approve'
+    TERRAFORM_ACTION = "apply"
+    ARTIFACT_BUCKET = 'knab-artifact-bucket-mgmt'
+    CREDENTIALS_ID = 'bitbucket-jenkins'
+    AWS_S3_CREDENTIALS = 'jenkins-artifact-s3'
+    AWS_S3_REGION = 'eu-west-1'
+
+    // Better debug output
+    ANSIBLE_STDOUT_CALLBACK = "debug"
+  }
+
+  stages {
+    stage('Just a dummy step to output something') {
+      steps {
+        echo "release-file: ${RELEASE_FOLDER}/${DEPLOY_VERSION}"
+      }
+    }
+
+    stage('Fetch release-file from S3') {
+      steps {
+        echo "release-file: ${RELEASE_FOLDER}/${DEPLOY_VERSION}"
+        withAWS(credentials: "${AWS_S3_CREDENTIALS}", region: "${AWS_S3_REGION}") {
+          s3Download bucket: "${ARTIFACT_BUCKET}", file: "${DEPLOY_VERSION}", path: "${RELEASE_FOLDER}/${DEPLOY_VERSION}"
+        }
+      }
+    }
+
+    stage('Read Environment Variables from file') {
+      steps {
+        // Load all variables set in the version file
+        load "${DEPLOY_VERSION}"
+        echo "Container version: ${BUILD_NUMBER}"
+      }
+    }
+
+    stage('Fetch software zip file') {
+      steps {
+        withAWS(credentials: "${AWS_S3_CREDENTIALS}", region: "${AWS_S3_REGION}") {
+          s3Download bucket: "${ARTIFACT_BUCKET}", file: "${env.SERVICE_NAME}-${BUILD_NUMBER}.zip", path: "${ARTIFACT_FOLDER}/${env.SERVICE_NAME}-${BUILD_NUMBER}.zip"
+        }
+      }
+    }
+
+    stage('Upload software zip file to env s3 bucket') {
+      steps {
+        withAWS(region:'us-east-1') {
+          s3Upload(file: "${env.SERVICE_NAME}-${BUILD_NUMBER}.zip", bucket: "${EDGE_ARTIFACT_BUCKET}", path: "${ARTIFACT_FOLDER}/${env.SERVICE_NAME}-${BUILD_NUMBER}.zip")
+        }
+      }
+    }
+
+
+    stage('Checkout Source and use branch') {
+      steps {
+        checkout([
+          $class: 'GitSCM',
+          branches: [[name: "${GIT_BRANCH}"]],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[$class: 'SubmoduleOption',
+            disableSubmodules: false,
+            parentCredentials: true,
+            recursiveSubmodules: true,
+            reference: '',
+            trackingSubmodules: false]],
+          submoduleCfg: [],
+          userRemoteConfigs: [[credentialsId: "${CREDENTIALS_ID}",
+            url: "${GIT_URL}"]]
+        ])
+      }
+    }
+
+    stage('Merge with templates') {
+      steps {
+          sh "chmod 777 -R ./merge.sh"
+          sh "./merge.sh"
+      }
+    }
+
+    stage('Deploy the stack!') {
+      steps {
+        sh "ansible-playbook stacks/${STACK}_${TERRAFORM_ACTION}.yml \
+          -i hosts \
+          -e @context/${ENV_NAME}/_common.yml \
+          -e software_version=${BUILD_NUMBER} \
+          -e env_artifact_bucket=${ENV_ARTIFACT_BUCKET} \
+          -e base_dir=`pwd` \
+          -e stack=${STACK} \
+          -e executor=${EXECUTOR} \
+          -e env_name=${ENV_NAME} \
+          -e terraform_action=${TERRAFORM_ACTION} \
+          -e action_arg=${ACTION_ARG}"
+      }
+    }
+  }
+}

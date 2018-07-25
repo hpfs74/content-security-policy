@@ -1,3 +1,22 @@
 node_modules
 .nyc_output
 coverage
+
+#IDE files
+.idea/
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# retry files
+*retry
+
+# context files
+context/pg-*

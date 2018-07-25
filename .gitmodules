@@ -1,0 +1,3 @@
+[submodule "aws-infra-templates"]
+	path = aws-infra-templates
+	url = git@bitbucket.org:knabab/aws-infra-templates.git
