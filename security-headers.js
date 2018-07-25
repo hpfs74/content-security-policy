@@ -98,6 +98,7 @@ function buildTag(tag, val) {
         "https://www.google.nl",
         "https://www.googleadservices.com",
         "https://www.gstatic.com",
+        "https://t.co",
         "https://webmodule2.risk-verzekeringen.nl"
     ],
     "script-src": [
@@ -128,7 +129,9 @@ function buildTag(tag, val) {
         "https://tagmanager.google.com",
         "https://snap.licdn.com",
         "https://static.ads-twitter.com",
-        "https://px.ads.linkedin.com"
+        "https://px.ads.linkedin.com",
+        "https://analytics.twitter.com",
+        "https://www.linkedin.com"
     ],
     "style-src": [
         "'unsafe-inline'",
