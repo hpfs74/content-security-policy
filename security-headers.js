@@ -125,7 +125,10 @@ function buildTag(tag, val) {
         "https://www.googletagmanager.com",
         "https://www.gstatic.com",
         "https://cdn.polyfill.io",
-        "https://tagmanager.google.com"
+        "https://tagmanager.google.com",
+        "https://snap.licdn.com",
+        "https://static.ads-twitter.com",
+        "https://px.ads.linkedin.com"
     ],
     "style-src": [
         "'unsafe-inline'",
