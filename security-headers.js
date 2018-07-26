@@ -49,6 +49,7 @@ function buildTag(tag, val) {
     "default-src": [
         "'unsafe-inline'",
         "'self'",
+        "http://version.bogus.net/v1.0",
         "http://*.usabilla.com",
         "http://aegon-middleware-qa.mobgen.com",
         "https://*.usabilla.com",
@@ -99,7 +100,8 @@ function buildTag(tag, val) {
         "https://www.googleadservices.com",
         "https://www.gstatic.com",
         "https://t.co",
-        "https://webmodule2.risk-verzekeringen.nl"
+        "https://webmodule2.risk-verzekeringen.nl",
+        "https://webmodulea.risk-verzekeringen.nl"
     ],
     "script-src": [
         "'unsafe-inline'",

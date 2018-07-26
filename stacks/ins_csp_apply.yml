@@ -19,7 +19,7 @@
       aws_account_id             : "{{ common.aws_account_id }}"
 
       # Lambda properties
-      lambda_function_name        : "insurance-csp"
+      lambda_function_name        : "insurance_csp"
       lambda_handler              : "security-headers.handler"
       lambda_s3_bucket            : "{{ common.lambda_edge_artifact_bucketname }}"
       lambda_zip_path             : "insurances/ContentSecurityPolicy/artifacts/insurance.ContentSecurityPolicy-{{ software_version }}.zip"
@@ -28,5 +28,5 @@
       lambda_memory_size          : 128
       lambda_description          : "Insurances Content Security Policy"
       lambda_timeout_seconds      : 5
-      lambda_unique_name          : "{{ env_name }}_{{ stack_name }}_{{ lambda_function_name }}"
+      lambda_unique_name          : "{{ env_name }}_{{ lambda_function_name }}"
       lambda_tracing_config       : "Active"
