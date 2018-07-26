@@ -4,9 +4,7 @@
     roles:
       - {
           role: deploy,
-          deployment_stack: "lambda",
-          lambda_env_vars_keys        : [ "dummy" ],
-          lambda_env_vars_vals        : [ "dummy" ]
+          deployment_stack: "lambda_edge",
         }
     vars:
       stack_name                 : "ins_csp"
@@ -21,7 +19,6 @@
       aws_account_id             : "{{ common.aws_account_id }}"
 
       # Lambda properties
-      lambda_edge                 : true
       lambda_function_name        : "insurance-csp"
       lambda_handler              : "security-headers.handler"
       lambda_s3_bucket            : "{{ common.lambda_edge_artifact_bucketname }}"
