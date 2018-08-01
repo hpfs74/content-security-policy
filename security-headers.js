@@ -49,7 +49,7 @@ function buildTag(tag, val) {
     "default-src": [
         "'unsafe-inline'",
         "'self'",
-        "http://version.bogus.net/v1.3",
+        "http://version.bogus.net/v1.4",
         "http://*.usabilla.com",
         "http://aegon-middleware-qa.mobgen.com",
         "https://*.usabilla.com",
@@ -95,7 +95,7 @@ function buildTag(tag, val) {
         "https://www.facebook.com/tr/",
         "https://www.google-analytics.com",
         "https://www.google.com",
-        "https://www.google.com/ads",
+        "https://www.google.*/ads",
         "https://www.google.nl",
         "https://www.googleadservices.com",
         "https://www.gstatic.com",
@@ -133,7 +133,8 @@ function buildTag(tag, val) {
         "https://static.ads-twitter.com",
         "https://px.ads.linkedin.com",
         "https://analytics.twitter.com",
-        "https://www.linkedin.com"
+        "https://www.linkedin.com",
+        "https://d6tizftlrpuof.cloudfront.net"
     ],
     "style-src": [
         "'unsafe-inline'",
