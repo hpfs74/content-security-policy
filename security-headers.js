@@ -49,7 +49,7 @@ function buildTag(tag, val) {
     "default-src": [
         "'unsafe-inline'",
         "'self'",
-        "http://version.bogus.net/v1.5",
+        "http://version.bogus.net/v1.6",
         "http://*.usabilla.com",
         "http://aegon-middleware-qa.mobgen.com",
         "https://*.usabilla.com",
