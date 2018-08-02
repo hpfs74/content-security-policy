@@ -95,7 +95,7 @@ function buildTag(tag, val) {
         "https://www.facebook.com/tr/",
         "https://www.google-analytics.com",
         "https://www.google.com",
-        "https://www.google.*/ads",
+        "https://www.google.bg",
         "https://www.google.nl",
         "https://www.googleadservices.com",
         "https://www.gstatic.com",
@@ -139,7 +139,11 @@ function buildTag(tag, val) {
     "style-src": [
         "'unsafe-inline'",
         "'self'",
-        "https://d6tizftlrpuof.cloudfront.net"
+        "https://d6tizftlrpuof.cloudfront.net",
+        "https://mijnverzekeren.d.knabstaging.nl",
+        "https://mijnverzekeren.t.knabstaging.nl",
+        "https://mijnverzekeren.a.knabstaging.nl",
+        "https://mijnverzekeren.knab.nl"
     ],
     "font-src": [
         "'self'",
