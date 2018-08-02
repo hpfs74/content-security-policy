@@ -49,7 +49,7 @@ function buildTag(tag, val) {
     "default-src": [
         "'unsafe-inline'",
         "'self'",
-        "http://version.bogus.net/v1.6",
+        "http://version.bogus.net/v1.7",
         "http://*.usabilla.com",
         "http://aegon-middleware-qa.mobgen.com",
         "https://*.usabilla.com",
@@ -141,13 +141,13 @@ function buildTag(tag, val) {
         "'self'",
         "https://d6tizftlrpuof.cloudfront.net",
         "https://mijnverzekeren.d.knabstaging.nl",
-        "blob:https://mijnverzekeren.d.knabstaging.nl",
+
         "https://mijnverzekeren.t.knabstaging.nl",
-        "blob:https://mijnverzekeren.t.knabstaging.nl",
+
         "https://mijnverzekeren.a.knabstaging.nl",
-        "blob:https://mijnverzekeren.a.knabstaging.nl",
-        "https://mijnverzekeren.knab.nl",
-        "blob:https://mijnverzekeren.knab.nl"
+
+        "https://mijnverzekeren.knab.nl"
+
     ],
     "font-src": [
         "'self'",
