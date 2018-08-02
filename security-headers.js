@@ -139,13 +139,11 @@ function buildTag(tag, val) {
     "style-src": [
         "'unsafe-inline'",
         "'self'",
+        "blob:",
         "https://d6tizftlrpuof.cloudfront.net",
         "https://mijnverzekeren.d.knabstaging.nl",
-
         "https://mijnverzekeren.t.knabstaging.nl",
-
         "https://mijnverzekeren.a.knabstaging.nl",
-
         "https://mijnverzekeren.knab.nl"
 
     ],
@@ -191,7 +189,10 @@ function buildTag(tag, val) {
         "https://www.google.com/ads/user-lists/837300153",
         "https://www.googletagmanager.com",
         "https://api.uat.knabverzekeren.nl",
-        "https://api.knab.nl/"
+        "https://api.knab.nl/",
+        "https://api.d.knabstaging.nl",
+        "https://api.t.knabstaging.nl",
+        "https://api.a.knabstaging.nl"
     ],
     "object-src": ["'none'"]
   }
