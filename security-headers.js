@@ -160,7 +160,8 @@ function buildTag(tag, val) {
         "https://connect.facebook.net",
         "https://staticxx.facebook.com/",
         "https://mods.netb.nl",
-        "https://email.knab.nl"
+        "https://email.knab.nl",
+        "https://d6tizftlrpuof.cloudfront.net"
     ],
     "connect-src": [
         "'self'",
